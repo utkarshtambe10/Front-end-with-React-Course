@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
@@ -47,29 +47,29 @@ class Header extends Component {
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
-                                        <span className="fa fa-home fa-lg">Home</span>
+                                        <span className="fa fa-home fa-lg"> Home</span>
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/aboutus">
-                                        <span className="fa fa-info fa-lg">About Us</span>
+                                        <span className="fa fa-info fa-lg"> About Us</span>
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/menu">
-                                        <span className="fa fa-list fa-lg">Menu</span>
+                                        <span className="fa fa-list fa-lg"> Menu</span>
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/contactus">
-                                        <span className="fa fa-address-card fa-lg">Contact Us</span>
+                                        <span className="fa fa-address-card fa-lg"> Contact Us</span>
                                     </NavLink>
                                 </NavItem>
                             </Nav>
-                            <Nav className="ml-auto" navbar>
+                            <Nav className="ms-auto" navbar>
                                 <NavItem>
                                     <Button outline onClick={this.toggleModel}>
-                                        <span className="fa fa-sign-in fa-lg">Login</span>
+                                        <span className="fa fa-sign-in fa-lg"> Login</span>
                                     </Button>
                                 </NavItem>
                             </Nav>
@@ -83,7 +83,6 @@ class Header extends Component {
                         <div className="col-12 col-sm-6">
                             <h1 className="display-2">Ristorante Con Fusion</h1>
                             <p className="lead">We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
-
                         </div>
                     </div>
                 </div>
