@@ -4,7 +4,7 @@ import Menu from './MenuComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
-import DishDetail from './DishDetailComponent';
+import DishDetail from './DishdetailComponent';
 import About from './AboutComponent';
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
@@ -24,7 +24,7 @@ class Main extends Component {
         };
     }
 
-    render() {
+     render() {
         const HomePage = () => {
             return (
                 <Home dish={this.state.dishes.filter((dish) => dish.featured)[0]}
