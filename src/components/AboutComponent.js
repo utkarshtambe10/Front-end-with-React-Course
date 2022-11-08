@@ -1,11 +1,14 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
+import { Fade, Stagger } from 'react-animation-components';
 
 function RenderLeader({ leader }) {
     return (
         <li className="media">
-            <img className="mr-4" src={leader.image} alt="Shot" />
+            <img className="mr-4" src={baseUrl + leader.image} alt="Shot" />
             <div className="media-body">
                 <h5 className="mt-0 mb-1">{leader.name}</h5>
                 <p>{leader.designation}</p>
@@ -17,11 +20,43 @@ function RenderLeader({ leader }) {
 
 function About(props) {
 
-    const leaders = props.leaders.map((leader) => {
-        return (
-            <RenderLeader leader={leader} />
-        );
-    });
+    const leaders = (() => {
+        if (props.leaders.isLoading) {
+            return (
+                <div className="container">
+                    <div className="row">
+                        <Loading />
+                    </div>
+                </div>
+            );
+        }
+        else if (props.leaders.errMess) {
+            return (
+                <div className="container">
+                    <div className="row">
+                        <h4>{props.leaders.errMess}</h4>
+                    </div>
+                </div>
+            );
+        }
+        else {
+            return (
+                <ul className="list-unstyled">
+                    <Stagger in>
+                        {
+                            props.leaders.leaders.map((leader) => {
+                                return (
+                                    <Fade in>
+                                        <RenderLeader leader={leader} />
+                                    </Fade>
+                                );
+                            })
+                        }
+                    </Stagger>
+                </ul>
+            );
+        }
+    })();
 
     return (
         <div className="container">
@@ -77,11 +112,7 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
-                <div className="col-12">
-                    <ul className="list-unstyled">
-                        {leaders}
-                    </ul>
-                </div>
+                <div className="col-12">{leaders}</div>
             </div>
         </div>
     );
