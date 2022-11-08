@@ -144,7 +144,6 @@ function RenderComments({ comments, addComment, dishId }) {
 
 const DishDetail = (props) => {
   if (props.isLoading) {
-
     return (
       <div className="container">
         <div className="row">
@@ -155,7 +154,6 @@ const DishDetail = (props) => {
   }
 
   else if (props.errMess) {
-
     return (
       <div className="container">
         <div className="row">
@@ -166,7 +164,6 @@ const DishDetail = (props) => {
   }
 
   else if (props.dish != null) {
-
     return (
       <div className="container">
         <div className="row">
@@ -188,8 +185,9 @@ const DishDetail = (props) => {
         </div>
       </div>
     );
-  } else {
-
+  } 
+  
+  else {
     return (
       <div></div>
     );
