@@ -1,4 +1,4 @@
-# Front-end-Web-Development-with-React-Course 🌐🖥️📱
+# Front-end-Web-Development-with-React-Course 🌐🖥️
 This is a repository for **Coursera Specialization Course**. Front-end Web Development with *React*.
 These repository contains all the answers/solutions to the assignmnets asked in every week or module of the course. 
 The link to course: <a href="https://in.coursera.org/learn/front-end-react" target="_blank" rel="noreferrer">Front-end with React.js</a> 
